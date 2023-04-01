@@ -17,9 +17,7 @@ const TopPlay = () => {
   const {activeSong, isPlaying} = useSelector((state)=> state.player);
   const {data} = useGetTopChartsQuery();
   const divRef = useRef(null);
-  console.log(data);
   const topPlays = data?.tracks.slice(0,5);
-  console.log(topPlays);
   const handlePauseClick = () =>{
     dispatch(playPause(false))
   }
@@ -101,7 +99,6 @@ const TopPlay = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <SongDetails/>
       </div>
     </div>
   )
